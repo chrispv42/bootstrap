@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Neon Grid • Cyberpunk UI</title>
+
+  <!-- Bootstrap 5.3.8 CSS -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+    crossorigin="anonymous"
+  />
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <!-- NAV -->
+  <nav class="navbar navbar-expand-lg navbar-dark glassy sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold neon-text" href="#">NEON<span class="accent">GRID</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav"
+              aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div id="nav" class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="#hero">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+          <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="#cta">Join</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO (12 columns on mobile; split 6/6 on md+) -->
+  <header id="hero" class="py-5">
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <div class="col-12 col-md-6">
+          <h1 class="display-5 fw-bold neon-text">Build with a 12-Column Supergrid</h1>
+          <p class="lead text-secondary-emphasis">
+            Bootstrap rows hold columns. Columns span 12 units total per row.
+            On small screens this stacks; on larger screens it splits beautifully.
+          </p>
+          <div class="d-flex gap-3">
+            <a href="#features" class="btn btn-neon">Explore Grid</a>
+            <a href="#gallery" class="btn btn-outline-neon">View Examples</a>
+          </div>
+        </div>
+        <div class="col-12 col-md-6">
+          <div class="hero-card p-4 rounded-4 glassy">
+            <div class="ratio ratio-16x9 rounded-3 overflow-hidden neon-border">
+              <img src="https://images.unsplash.com/photo-1535223289827-42f1e9919769?q=80&w=1400&auto=format&fit=crop"
+                   class="object-fit-cover" alt="Neon city skyline" />
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="..." class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="..." class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="..." class="d-block w-100" alt="...">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+            <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel"></div>
+            <p class="mt-3 small text-secondary">Cyberpunk aesthetic: neon accents, glass layers, and glow.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- FEATURES (3 cards: 12 → 6 → 4 columns) -->
+  <section id="features" class="py-5">
+    <div class="container">
+      <h2 class="h1 fw-bold mb-4 neon-text">Grid in Action</h2>
+      <p class="text-secondary-emphasis mb-4">Each row has 12 columns. Combine them as needed.</p>
+
+      <div class="row g-4">
+        <!-- col-12 on xs, col-md-6, col-lg-4 -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <article class="card card-cyber h-100">
+            <div class="card-body">
+              <h3 class="h4 card-title">Full-Width</h3>
+              <p class="card-text">Use <code>.col-12</code> to make content span the entire row on any screen.</p>
+              <span class="badge bg-neon">12 columns</span>
+            </div>
+          </article>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <article class="card card-cyber h-100">
+            <div class="card-body">
+              <h3 class="h4 card-title">Halves</h3>
+              <p class="card-text">Two equal blocks with <code>.col-md-6</code> each (6 + 6 = 12).</p>
+              <span class="badge bg-neon">6 / 6</span>
+            </div>
+          </article>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <article class="card card-cyber h-100">
+            <div class="card-body">
+              <h3 class="h4 card-title">Thirds</h3>
+              <p class="card-text">Three columns with <code>.col-lg-4</code> (4 + 4 + 4 = 12).</p>
+              <span class="badge bg-neon">4 / 4 / 4</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY (masonry-like grid using responsive cols) -->
+  <section id="gallery" class="py-5">
+    <div class="container">
+      <h2 class="h1 fw-bold mb-4 neon-text">Responsive Gallery</h2>
+      <div class="row g-4">
+        <div class="col-12 col-sm-6 col-lg-3"><div class="panel neon-border ratio ratio-1x1"></div></div>
+        <div class="col-12 col-sm-6 col-lg-3"><div class="panel neon-border ratio ratio-1x1"></div></div>
+        <div class="col-12 col-sm-6 col-lg-3"><div class="panel neon-border ratio ratio-1x1"></div></div>
+        <div class="col-12 col-sm-6 col-lg-3"><div class="panel neon-border ratio ratio-1x1"></div></div>
+      </div>
+      <p class="mt-3 text-secondary small">On phones these stack; on tablets they’re 2-up; on desktops 4-up.</p>
+    </div>
+  </section>
+
+  <!-- CTA (offset + centered columns) -->
+  <section id="cta" class="py-5">
+    <div class="container">
+      <div class="row justify-content-center text-center">
+        <!-- 8 of 12 columns, centered with justify-content-center -->
+        <div class="col-12 col-lg-8">
+          <div class="p-5 rounded-4 glassy neon-border">
+            <h2 class="h1 fw-bold neon-text mb-3">Ready to Build?</h2>
+            <p class="lead text-secondary-emphasis mb-4">Use the grid to orchestrate layouts—from simple 12-column rows to complex responsive compositions.</p>
+            <a href="#" class="btn btn-neon btn-lg">Deploy the Neon</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container text-center py-5">
+    <img src="Images/vineWebsCpyRt.png" alt="Vine Webs Logo" class="img-fluid vine-webs-logo">
+  </div>
+
+  <footer class="py-4 border-top border-opacity-25 border-info-subtle">
+    <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between gap-3">
+      <span class="small text-secondary">Vine Webs © | All Rights Reserved</span>
+      <div class="d-flex gap-3 small">
+        <a href="#" class="link-neon">Docs</a>
+        <a href="#" class="link-neon">GitHub</a>
+        <a href="#" class="link-neon">Support</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-4Kf4+0P1z7nU5a/0sV7mJ7pJmN7cS6oy7mX0kNQ2k6bECv1o2nqT6VmxY6m2e2Qn"
+    crossorigin="anonymous"
+  ></script>
+</body>
+</html>

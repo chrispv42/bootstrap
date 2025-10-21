@@ -1,0 +1,86 @@
+/* —— Cyberpunk Theme Helpers —— */
+body {
+  background: radial-gradient(1200px 600px at 20% -10%, #0ff3 20%, transparent 60%),
+              radial-gradient(1000px 500px at 120% 10%, #f0f3 20%, transparent 60%),
+              linear-gradient(135deg, #05010b 0%, #090018 35%, #0a001f 100%);
+  color: #e8f2ff;
+  line-height: 1.6; /* Enhance readability */
+}
+
+/* General section padding for better visual separation */
+section {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+/* Adjust hero section specific padding */
+#hero {
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+}
+
+/* Adjust CTA section specific padding */
+#cta .glassy {
+  padding-top: 4rem !important;
+  padding-bottom: 4rem !important;
+}
+
+.glassy {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(160, 255, 255, 0.12);
+  border-radius: 14px;
+}
+
+.neon-text { color: #a8f1ff; text-shadow: 0 0 12px #00e5ff44, 0 0 36px #00e5ff22; }
+.neon-border { box-shadow: inset 0 0 0 1px rgba(0, 255, 255, .3), 0 0 24px #00ffff22; border-radius: 12px; }
+.accent { color: #ff47ff; }
+
+.btn-neon {
+  --glow1: #00ffff;
+  --glow2: #ff47ff;
+  color: #001018;
+  font-weight: 700;
+  border: 0;
+  padding: .8rem 1.2rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--glow1), var(--glow2));
+  box-shadow: 0 0 24px var(--glow1)44, 0 0 48px var(--glow2)33;
+}
+.btn-neon:hover { transform: translateY(-2px); filter: brightness(1.08); }
+.btn-outline-neon {
+  color: #a8f1ff;
+  border: 1px solid #00ffff66;
+  padding: .8rem 1.2rem;
+  border-radius: 999px;
+  background: transparent;
+}
+.btn-outline-neon:hover { background: #00ffff1a; color: #eaffff; }
+
+.hero-card img { filter: saturate(1.2) contrast(1.05); }
+
+.card-cyber.card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(0, 255, 255, 0.18);
+  border-radius: 16px;
+}
+.card-cyber .card-title { color: #e6faff; }
+.badge.bg-neon { background: linear-gradient(135deg, #00ffff, #8a2be2); }
+
+.panel {
+  background: linear-gradient(135deg, #0b1222, #14142b);
+}
+
+/* Links */
+a.link-neon { color: #8ae8ff; text-decoration: none; }
+a.link-neon:hover { color: #fff; text-shadow: 0 0 10px #00e5ff66; }
+
+/* Utility */
+.object-fit-cover { object-fit: cover; }
+
+.vine-webs-logo {
+  max-width: 400px; /* Adjust as needed */
+  height: auto;
+  margin-top: 2rem;
+  opacity: 0.7; /* Make it slightly transparent to blend with the theme */
+}

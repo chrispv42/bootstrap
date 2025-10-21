@@ -25,6 +25,8 @@ section {
   padding-bottom: 4rem !important;
 }
 
+
+
 .glassy {
   background: rgba(255, 255, 255, 0.04);
   backdrop-filter: blur(10px);
@@ -91,7 +93,7 @@ a.link-neon:hover { color: #fff; text-shadow: 0 0 10px #00e5ff66; }
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('./Images/BS_BG.png');
+    background-image: url('./Images/BS_BG2.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -156,4 +158,60 @@ a.link-neon:hover { color: #fff; text-shadow: 0 0 10px #00e5ff66; }
     transition: none !important;
     animation: none !important;
   }
+}
+
+/* ===== Build Page Additions ===== */
+
+.builder-sidebar {
+  position: sticky;
+  top: 88px; /* sits under navbar */
+}
+
+.preview-wrap {
+  position: relative;
+}
+
+.preview-canvas {
+  min-height: 60vh;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(0,255,255,0.18);
+}
+
+/* Toggleable grid overlay to help placement */
+.grid-overlay {
+  background-image:
+    linear-gradient(to right, rgba(138,232,255,.12) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(138,232,255,.08) 1px, transparent 1px);
+  background-size: calc(100% / 12) 100%, 100% 24px;
+  background-position: left top, left top;
+}
+
+/* Code box look */
+.code-output {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  background: rgba(10, 10, 20, 0.6);
+  color: #e8f2ff;
+  border: 1px solid rgba(0,255,255,0.2);
+  border-radius: 10px;
+}
+
+/* Tiny toast for copy feedback */
+.copy-toast {
+  position: fixed;
+  left: 50%;
+  top: 16px;
+  transform: translateX(-50%) translateY(-12px);
+  background: rgba(0, 255, 255, 0.12);
+  border: 1px solid rgba(0, 255, 255, 0.35);
+  color: #a8f1ff;
+  padding: 8px 14px;
+  border-radius: 999px;
+  backdrop-filter: blur(6px);
+  opacity: 0;
+  transition: opacity .2s ease, transform .2s ease;
+  z-index: 9999;
+}
+.copy-toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
 }

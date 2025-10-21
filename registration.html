@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>BUILDGRID • Create Account</title>
+
+  <!-- Bootstrap 5.3.8 -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+    crossorigin="anonymous"
+  />
+  <!-- Your shared theme -->
+  <link rel="stylesheet" href="style.css"/>
+  <!-- Auth page additions -->
+  <link rel="stylesheet" href="auth.css"/>
+</head>
+<body>
+  <div class="background-image"></div>
+
+  <!-- NAV -->
+  <nav class="navbar navbar-expand-lg navbar-dark glassy sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold neon-text" href="./index.html">BUILD<span class="accent">GRID</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav"
+              aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div id="nav" class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="./index.html#features">Features</a></li>
+          <li class="nav-item"><a class="nav-link" href="./build.html" target="_blank">Builder</a></li>
+          <li class="nav-item"><a class="nav-link active" href="./registration.html">Join</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- AUTH WRAPPER -->
+  <main class="auth-wrap">
+    <div class="container">
+      <div class="row justify-content-center align-items-center">
+        <div class="col-12 col-lg-10">
+          <div class="glassy neon-border rounded-4 p-0 overflow-hidden auth-container">
+            <div class="row g-0">
+              <!-- Left / Brand -->
+              <aside class="col-12 col-lg-5 auth-aside d-none d-lg-block">
+                <div class="auth-aside-inner">
+                  <h1 class="neon-text fw-bold mb-2">Join BUILD<span class="accent">GRID</span></h1>
+                  <p class="text-secondary-emphasis mb-4">
+                    Craft layouts, share builds, and glow with a cyberpunk-clean pipeline.
+                  </p>
+
+                  <ul class="list-unstyled small text-secondary-emphasis mb-4">
+                    <li class="mb-2">✔️ Responsive 12-column Supergrid</li>
+                    <li class="mb-2">✔️ Neon UI components</li>
+                    <li class="mb-2">✔️ Exportable snippets</li>
+                  </ul>
+
+                  <div class="ratio ratio-16x9 neon-border rounded-3 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1535223289827-42f1e9919769?q=80&w=1400&auto=format&fit=crop"
+                         class="object-fit-cover" alt="Neon city"/>
+                  </div>
+                </div>
+              </aside>
+
+              <!-- Right / Form -->
+              <section class="col-12 col-lg-7">
+                <div class="p-4 p-md-5">
+                  <header class="mb-4">
+                    <h2 class="h3 fw-bold neon-text mb-1">Create your account</h2>
+                    <p class="small text-secondary-emphasis mb-0">Already have one?
+                      <a class="link-neon" href="./login.html">Sign in</a>
+                    </p>
+                  </header>
+
+                  <!-- You can wire this to your backend later -->
+                  <form id="registrationForm" class="needs-validation" novalidate>
+                    <div class="row g-3">
+                      <div class="col-12 col-md-6">
+                        <label for="firstName" class="form-label small text-secondary">First name</label>
+                        <input type="text" class="form-control" id="firstName" required>
+                        <div class="invalid-feedback">Please enter your first name.</div>
+                      </div>
+                      <div class="col-12 col-md-6">
+                        <label for="lastName" class="form-label small text-secondary">Last name</label>
+                        <input type="text" class="form-control" id="lastName" required>
+                        <div class="invalid-feedback">Please enter your last name.</div>
+                      </div>
+
+                      <div class="col-12">
+                        <label for="username" class="form-label small text-secondary">Username</label>
+                        <input type="text" class="form-control" id="username" minlength="3" maxlength="24" required>
+                        <div class="invalid-feedback">Username must be 3–24 characters.</div>
+                      </div>
+
+                      <div class="col-12">
+                        <label for="email" class="form-label small text-secondary">Email</label>
+                        <input type="email" class="form-control" id="email" required>
+                        <div class="invalid-feedback">Please provide a valid email.</div>
+                      </div>
+
+                      <div class="col-12">
+                        <label for="password" class="form-label small text-secondary">Password</label>
+                        <div class="input-group has-validation">
+                          <input type="password" class="form-control" id="password" minlength="8" required aria-describedby="pwHelp">
+                          <button class="btn btn-outline-neon pw-toggle" type="button" data-target="#password" aria-label="Show password">Show</button>
+                          <div class="invalid-feedback">Minimum 8 characters.</div>
+                        </div>
+                        <div id="pwHelp" class="form-text small text-secondary-emphasis mt-1">
+                          Use 8+ chars with a mix of letters, numbers, and symbols.
+                        </div>
+
+                        <!-- Strength meter -->
+                        <div class="pw-meter mt-2" aria-hidden="true">
+                          <div class="pw-bar" id="pwBar"></div>
+                        </div>
+                        <div class="small mt-1" id="pwLabel"></div>
+                      </div>
+
+                      <div class="col-12">
+                        <label for="confirmPassword" class="form-label small text-secondary">Confirm password</label>
+                        <div class="input-group has-validation">
+                          <input type="password" class="form-control" id="confirmPassword" required>
+                          <button class="btn btn-outline-neon pw-toggle" type="button" data-target="#confirmPassword" aria-label="Show password">Show</button>
+                          <div class="invalid-feedback">Passwords must match.</div>
+                        </div>
+                      </div>
+
+                      <div class="col-12">
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" id="terms" required>
+                          <label class="form-check-label small" for="terms">
+                            I agree to the <a href="#" class="link-neon">Terms</a> and <a href="#" class="link-neon">Privacy</a>.
+                          </label>
+                          <div class="invalid-feedback">You must agree before submitting.</div>
+                        </div>
+                      </div>
+
+                      <div class="col-12">
+                        <button type="submit" class="btn btn-neon w-100">Create account</button>
+                      </div>
+
+                      <div class="col-12">
+                        <div class="text-center small text-secondary-emphasis">or</div>
+                      </div>
+
+                      <div class="col-12 d-grid gap-2">
+                        <button type="button" class="btn btn-outline-neon w-100">Continue with GitHub</button>
+                        <button type="button" class="btn btn-outline-neon w-100">Continue with Google</button>
+                      </div>
+                    </div>
+                  </form>
+
+                  <p class="small text-secondary mt-4 mb-0">
+                    By creating an account you agree to receive service emails. You can unsubscribe from marketing any time.
+                  </p>
+                </div>
+              </section>
+            </div>
+          </div>
+
+          <div class="text-center py-4">
+            <img src="Images/vineWebsCpyRt.png" alt="Vine Webs Logo" class="img-fluid vine-webs-logo">
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="py-4 border-top border-opacity-25 border-info-subtle">
+    <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between gap-3">
+      <span class="small text-secondary">2025 Vine Webs © | All Rights Reserved</span>
+      <div class="d-flex gap-3 small">
+        <a href="./index.html#features" class="link-neon">Docs</a>
+        <a href="https://github.com/chrispv42" target="_blank" class="link-neon">GitHub</a>
+        <a href="https://link.v1ce.co/vine" target="_blank" class="link-neon">Support</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Page JS: validation, strength meter, toggles -->
+  <script>
+    // Bootstrap validation
+    (() => {
+      const form = document.getElementById('registrationForm');
+      form.addEventListener('submit', (e) => {
+        // confirm password match
+        const pw = document.getElementById('password');
+        const cpw = document.getElementById('confirmPassword');
+        if (pw.value !== cpw.value) {
+          cpw.setCustomValidity('Passwords do not match');
+        } else {
+          cpw.setCustomValidity('');
+        }
+
+        if (!form.checkValidity()) {
+          e.preventDefault();
+          e.stopPropagation();
+        }
+
+        form.classList.add('was-validated');
+      });
+    })();
+
+    // Show/Hide toggles
+    document.querySelectorAll('.pw-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const input = document.querySelector(btn.dataset.target);
+        const isPw = input.getAttribute('type') === 'password';
+        input.setAttribute('type', isPw ? 'text' : 'password');
+        btn.textContent = isPw ? 'Hide' : 'Show';
+      });
+    });
+
+    // Password strength meter (simple heuristic)
+    const pw = document.getElementById('password');
+    const pwBar = document.getElementById('pwBar');
+    const pwLabel = document.getElementById('pwLabel');
+
+    function strengthScore(v) {
+      let s = 0;
+      if (v.length >= 8) s++;
+      if (/[A-Z]/.test(v)) s++;
+      if (/[a-z]/.test(v)) s++;
+      if (/\d/.test(v)) s++;
+      if (/[^A-Za-z0-9]/.test(v)) s++;
+      return s; // 0..5
+    }
+
+    function updateMeter() {
+      const v = pw.value || '';
+      const score = strengthScore(v);
+      const pct = (score / 5) * 100;
+      pwBar.style.width = pct + '%';
+
+      let label = 'Weak';
+      if (score >= 4) label = 'Strong';
+      else if (score === 3) label = 'Medium';
+
+      pwLabel.textContent = v ? `Strength: ${label}` : '';
+      pwBar.className = 'pw-bar ' + (label.toLowerCase());
+    }
+
+    pw.addEventListener('input', updateMeter);
+    updateMeter();
+  </script>
+</body>
+</html>
